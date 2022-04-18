@@ -1,0 +1,22 @@
+{
+  "name": "sp_metascraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./.routhr/index.js",
+  "scripts": {
+    "dev": "nodemon ./.routhr/index.js",
+    "start": "node ./.routhr/index.js",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "routhr": "^1.0.14",
+    "typescript": "^4.6.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0"
+  }
+}
