@@ -1,17 +1,21 @@
 
-import { RequestInterface, ResponseInterface, NextFunctionInterface } from "routhr";
+import { RequestInterface, ResponseInterface, NextFunctionInterface } from "routhr"; 
 const lookUpMiddleware = (req: RequestInterface, res: ResponseInterface, next: NextFunctionInterface) => {
-    const url: any = req.query.url;
+    const url: any = req.routhr?.route?.queries?.url;
+    console.log(url); 
     if (!url || url === "") {
         res.status(400).send({
-            message: "Missing url parameter.",
-        });
+            status: {
+                success: false,
+                code: 400,
+                message: "Missing url parameter.",
+            }
+        }); 
     }
 
     else {
-        req.url = url;
         next();
     }
-};
+};  
 
 export default lookUpMiddleware;

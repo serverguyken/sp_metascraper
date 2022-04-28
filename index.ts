@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const routhr = new Routhr(port);
 routhr.use(cors());
+//routhr.use(routhr.middleware.bodyParser.json);
 import routes from './route/routes';
 routhr.useRoutes(routes);
-routhr.listen();
+routhr.start();
