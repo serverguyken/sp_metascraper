@@ -14,7 +14,7 @@ const corsOptions = {
 }
 require('dotenv').config();
 // routhr.use((req, res, next) => {
-//     console.log(req.headers.host);
+//     console.log(req.headers.host); 
 //     if (req.headers.host !== "spacre.com") {
 //         res.status(500).send({
 //             message: 'Not Authorized to call this API'
