@@ -4,12 +4,12 @@ const acceptableHost = {
     local: 'localhost:3000',
     network: '10.0.0.138:3004',
     spacre: 'spacre.com',
-    spacre_user_api: 'spacreuserapi.spacre.com',
-    heroku: 'spacre-userapi.herokuapp.com'
+    spacre_meta_api: 'metascraper.spacre.com',
+    heroku: 'spacre-meta-scraper.herokuapp.com'
 }
 
 export const checkHost = (req: RequestInterface) => {
-    if (req.headers.host === acceptableHost.local  || req.headers.host === acceptableHost.network || req.headers.host === acceptableHost.spacre || req.headers.host === acceptableHost.spacre_user_api || req.headers.host === acceptableHost.heroku) {
+    if (req.headers.host === acceptableHost.local  || req.headers.host === acceptableHost.network || req.headers.host === acceptableHost.spacre || req.headers.host === acceptableHost.spacre_meta_api || req.headers.host === acceptableHost.heroku) {
         return true
     } else {
         return false
