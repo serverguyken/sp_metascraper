@@ -2,9 +2,9 @@
   "name": "sp_metascraper",
   "version": "1.0.0",
   "description": "",
-  "main": "./.build/index.js",
+  "main": "./.routhr/index.js",
   "scripts": {
-    "dev": "nodemon ./.dev/index.js",
+    "dev": "routhr dev",
     "start": "node ./.build/index.js",
     "build": "tsc -p prodtsconfig.json",
     "watch": "tsc -p tsconfig.json --watch"
@@ -17,15 +17,13 @@
     "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.18.1",
+    "routhr": "^1.1.4",
+    "routhr_cli": "^1.0.10",
     "save": "^2.5.0",
     "typescript": "^4.6.4",
     "xpath": "0.0.32"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/xmldom": "^0.1.31",
-    "nodemon": "^2.0.16",
-    "ts-node": "^10.7.0"
+    "@types/xmldom": "^0.1.31"
   }
 }

@@ -1,7 +1,6 @@
-import { Response } from "express";
+import Routhr, { RequestInterface, ResponseInterface } from "routhr";
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { IRequest } from "../../interface";
 
 
 interface Meta {
@@ -116,8 +115,8 @@ const parseUrl = (url: string) => {
 
     return ParseUrl(url);
 }
-const metaHandler = (req: IRequest, res: Response) => {
-    const url: string | any = req.meta ? req.meta.url : req.query.url
+const metaHandler = (req: RequestInterface, res: ResponseInterface) => {
+    const url = req.routhr?.route?.queries.url;
     parseUrl(url).then((result: any) => {
         const meta: Meta = {
             title: result.title,

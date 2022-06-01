@@ -37,6 +37,33 @@ import metaMiddleware from './middleware/metaMiddleware';
 import { NextFunction, Request, Response } from 'express';
 const routes: RouteInterface[] = [
     {
+        path: `/`,
+        method: 'GET',
+        handler: (req, res) => {
+            res.send({
+                message: 'use api/v1/'
+            })
+        },
+    },
+    {
+        path: `/api/v1`,
+        method: 'GET',
+        handler: (req, res) => {
+            res.send({
+                message: 'latest version'
+            })
+        },
+    },
+    {
+        path: `/favicon.ico`,
+        method: 'GET',
+        handler: (req, res) => {
+            res.status(200).json({
+                message: 'no favicon'
+            })
+        },
+    },
+    {
         path: `/${api_version}/meta/lookup`,
         method: 'GET',
         handler: metaHandler,
